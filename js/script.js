@@ -14,8 +14,6 @@ const mealDetails = async(api) =>{
 
 
 const mealContainer = (name, imgSrc,id,instruction,videoLink,area) => {
-  // console.log(name+" "+id);
-  // console.log("clicked");
   return ` <div class="meal-container">
   <img src="${imgSrc}" alt="${name}" class="meal-img">
   <h4 class="meal-name">${name}</h4>
@@ -82,48 +80,48 @@ searchBtn.addEventListener("click", function () {
     
 });
 
-/* Favourite button click logic */
+/* Favourite button click logic 
+  - 
+*/
 
 let mealListId = document.getElementById("meal-list-id");
 mealListId.addEventListener("click",(e)=>{
   const element = e.target;
-
-  // let tempFavorite = [];
+  
 
   if(e.target.classList.contains('testing-btn')){
     if(e.target.classList.contains('fa-heart-o')){
-      e.target.classList.remove('fa-heart-o');;
+      e.target.classList.remove('fa-heart-o');
       e.target.classList.add('fa-heart');
 
-      /* name, imgSrc, id, instruction, videoLink, area */
-      // let temp = arrFoodItems.find((item)=>item.idMeal == e.target.dataset.id);
-      // tempFavorite.push(temp);
-      // console.log(tempFavorite);
+      for(var i=0;i<arrFoodItems.length;i++){
 
-      arrFoodItems.find((item)=>{
-        if(item.idMeal == e.target.dataset.id){
-          console.log("True");
+        if(Number(arrFoodItems[i].idMeal) == Number(e.target.dataset.id) ){
+          favFoodItems.push(arrFoodItems[i]);
+          localStorage.setItem("favFood",JSON.stringify(favFoodItems));
           
         }
-        
-      })
-
-      for(var i=0;i<arrFoodItems.length;i++){
-        // console.log(i + " : " +arrFoodItems.length);
-        if(Number(arrFoodItems[i].idMeal) == Number(e.target.dataset.id)){
-          favFoodItems.push(arrFoodItems[i]);
-          console.log(favFoodItems[i]);
-        }
       }
-      // console.log(tempFavorite);
-      // favFoodItems.push(tempFavorite);
-      
     }
     else{
       e.target.classList.add('fa-heart-o');
       e.target.classList.remove('fa-heart');
+      for(var i=0;i<favFoodItems.length;i++){
+        if(Number(favFoodItems[i].idMeal) == Number(e.target.dataset.id) ){
+          favFoodItems.splice(i,1);
+          localStorage.setItem("favFood",JSON.stringify(favFoodItems));
+        }
+      }
+
     }
-  }
+  } 
 })
 
-/* Add favourite items to localstorage  */
+localStorage.setItem("favFoodItems",JSON.stringify(favFoodItems));
+
+
+
+
+/* Display favourite foods on favourite.html */
+
+

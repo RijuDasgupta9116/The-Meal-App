@@ -80,3 +80,21 @@
     border: none !important;
     color:red
 }
+
+@media screen and (max-width:920px){
+   
+    .meal-container{
+        
+        width: 46%;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+   
+    .meal-container{
+        display: block;
+        width: 90%;
+    }
+
+  }

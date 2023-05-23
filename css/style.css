@@ -81,20 +81,63 @@
     color:red
 }
 
+
+.brand-logo{
+    width:3%;
+    /* height: 3%; */
+    border-radius: 50%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.text-content-justify{
+    text-align: justify;
+}
+
+.back-pic img{
+    /* border-radius: 50%; */
+    width: 60%;
+    border-radius: 10px;
+}
+
 @media screen and (max-width:920px){
-   
+   .brand-logo{
+    width: 7%;
+   }
     .meal-container{
         
         width: 46%;
     }
+    .img-fluid{
+        /* display: none; */
+        height: 100vh;
+    }
 }
 
+.social-handle-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social-media span i{
+    font-size: 50px;
+    color: #d62976;
+}
 
 @media screen and (max-width: 480px) {
-   
+    .brand-logo{
+        width: 12%;
+    }
     .meal-container{
         display: block;
         width: 90%;
     }
-
+    .img-fluid{
+        height: 50vh;
+    }
+    .back-pic img{
+        width: 95%;
+    }
   }

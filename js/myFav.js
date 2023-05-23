@@ -1,5 +1,9 @@
 const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
+
+/*
+  mealContainer function is used to render the data on screen
+*/ 
 const mealContainer = (name, imgSrc,id,instruction,videoLink,area) => {
     return ` <div class="meal-container">
     <img src="${imgSrc}" alt="${name}" class="meal-img">
@@ -33,11 +37,18 @@ const mealContainer = (name, imgSrc,id,instruction,videoLink,area) => {
   };
 
 
+/*
+  Taking the data from local storage and storing it in fav array
+*/
 let fav = []
 const isPresent = localStorage.getItem("favFood");
 if(isPresent){
     fav = JSON.parse(isPresent);
 }
+
+/*
+  displayMeals Function is used to display the favourite meals on screen
+*/
 
 function displayMeals(){
     let meals = "";
@@ -50,6 +61,11 @@ displayMeals();
 
 
 let mealListId = document.getElementById("meal-list-id");
+
+/*
+  here onclick on the heart icon the meal will removed from fav array and local storage
+  display the meals again on screen
+*/
 
 mealListId.addEventListener("click",(e)=>{
     let element = e.target;

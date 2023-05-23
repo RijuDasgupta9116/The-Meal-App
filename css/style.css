@@ -3,15 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* .container{
-    width: 100%;
-    height: 100vh;
-    background-color: aqua;
-    /* background: url(../img/bg.jpg) no-repeat center center/cover; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-}  */
 
 .search-container{
     display: inline-block;
@@ -34,17 +25,12 @@
 .meal{
     display: inline-block;
     width: 100%;
-    /* flex-direction: row;
-    justify-content: center;
-    align-items: center; */
 }
 
 .meal-container{
     width: 25%;
     display: inline-block;
     padding: 7px;
-    /* flex-wrap: wrap;
-    flex-direction: column; */
     justify-content: center;
     align-items: center;
     margin: 10px;
@@ -65,16 +51,7 @@
 .meal-container i:hover{
     cursor: pointer;
 }
-/* .fav-btn{
-    border: none;
-    background-color: white;
-    border-radius: 50%;
-    font-size: 22px;
-    color: red;
-} */
-/* .fav i{
-    font-size: 30px;
-} */
+
 .testing-btn{
     font-size: 22px;
     border: none !important;
@@ -84,11 +61,7 @@
 
 .brand-logo{
     width:3%;
-    /* height: 3%; */
     border-radius: 50%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 .text-content-justify{
@@ -96,10 +69,13 @@
 }
 
 .back-pic img{
-    /* border-radius: 50%; */
     width: 60%;
     border-radius: 10px;
 }
+
+/*
+    Media Query for Tabs
+*/
 
 @media screen and (max-width:920px){
    .brand-logo{
@@ -110,7 +86,6 @@
         width: 46%;
     }
     .img-fluid{
-        /* display: none; */
         height: 100vh;
     }
 }
@@ -125,6 +100,9 @@
     font-size: 50px;
     color: #d62976;
 }
+/* 
+    Media Query for Mobile Devices
+*/
 
 @media screen and (max-width: 480px) {
     .brand-logo{

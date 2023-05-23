@@ -12,7 +12,9 @@ const mealDetails = async(api) =>{
   return data;
 }
 
-
+/*
+  mealContainer function is used to render the data on screen
+*/ 
 const mealContainer = (name, imgSrc,id,instruction,videoLink,area) => {
   return ` <div class="meal-container">
   <img src="${imgSrc}" alt="${name}" class="meal-img">
@@ -59,6 +61,13 @@ mealDetails(url).then(data =>{
 
 })
 
+
+/* 
+  search button click logic 
+  - fetch data from api
+  - display data on screen
+  - mealContainer function is used to display data on screen
+*/
 searchBtn.addEventListener("click", function () {
   fetch(url + searchBox.value).then((res) => {
       
@@ -81,7 +90,9 @@ searchBtn.addEventListener("click", function () {
 });
 
 /* Favourite button click logic 
-  - 
+  - onclick of favourite button the heart icon changes
+  - if heart icon is filled then the food item is added to favourite list and stored in local storage
+  - if heart icon is empty then the food item is removed from favourite list and stored in local storage
 */
 
 let mealListId = document.getElementById("meal-list-id");
@@ -117,7 +128,7 @@ mealListId.addEventListener("click",(e)=>{
   } 
 })
 
-localStorage.setItem("favFoodItems",JSON.stringify(favFoodItems));
+// localStorage.setItem("favFoodItems",JSON.stringify(favFoodItems));
 
 
 
